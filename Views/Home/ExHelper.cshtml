@@ -1,0 +1,26 @@
+﻿@using BookStore.Helpers
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Helpers</h2>
+<div>
+    @{
+        string[] cities = new string[] { "Лондон", "Париж", "Москва" };
+    }
+    @{
+        string[] countries = new string[] { "Великобритания", "Франция", "Россия" };
+    }
+    <h3>Города</h3>
+    @Html.CreateList(cities)
+    <br />
+    <h3>Страны</h3>
+    <!-- или можно вызвать так -->
+    @Html.CreateList(new string[] { "Лондон", "Париж", "Берлин" }, new { @class = "btn", id = "citiesList" })
+
+    @Html.Image("/Images/Enot.jpg", "My Enot (/Images/Enot.jpg)")
+</div>
+@section Footer {
+    Все права защищены. BookStore. 2017.
+}
